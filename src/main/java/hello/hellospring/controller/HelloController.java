@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+@Controller //컨트롤러 어노테이션을 보고 스프링이 컨테이너에서 빈을 관리
 public class HelloController {
     @GetMapping("hello")
     public String hello(Model model) {
