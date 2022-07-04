@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller //컨트롤러 어노테이션을 보고 스프링이 컨테이너에서 빈을 관리
+@Controller //컨트롤러 어노테이션(얘는 컨트롤러야~)을 보고 스프링이 컨테이너에서 빈을 관리
 public class HelloController {
     @GetMapping("hello")
     public String hello(Model model) {
@@ -16,11 +16,11 @@ public class HelloController {
 
     //
 // MVC방식
-    @GetMapping("hello-MVC")
+    @GetMapping("hello-MVC") //localhost:8080/hello-MVC 요청이 들어오면 아래의 함수를 실행시켜줘~ 라는뜻
 
     public String helloMVC(@RequestParam(name = "name", required = true) String name, Model model) {
         model.addAttribute("name", name);
-        return "hello-template";
+        return "hello-template"; //resouces의 templates에서 hello-template라는 이름의 View를 찾아서 반환해~
     }
 
     //    API방식
