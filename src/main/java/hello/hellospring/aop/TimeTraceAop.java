@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeTraceAop {
 
-   @Around("execution(* hello.hellospring..*(..))") //타겟팅가능 패키지명..거기밑에있는거..클래스명..파라미터타입
+   @Around("execution(* hello.hellospring..*(..))") //타겟팅가능 패키지명..거기밑에있는거..클래스명..파라미터타입 "execution(* hello.hellospring.service..*(..))" <-이렇게하면 서비스에서만 동작
     public Object execute(ProceedingJoinPoint joinPoint)throws Throwable {
         long start = System.currentTimeMillis();
         System.out.println("joinPoint = " + joinPoint.toString());
